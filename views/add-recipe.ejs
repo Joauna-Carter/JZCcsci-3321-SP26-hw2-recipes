@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Add Recipe</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <nav class="nav">
+      <a href="/">Home</a>
+      <a href="/recipes">Recipes</a>
+      <a href="/add-recipe">Add Recipe</a>
+    </nav>
+
+    <main class="container">
+      <h1>Add a Recipe</h1>
+
+      <form method="POST" action="/add-recipe">
+        <label>Recipe Title</label><br />
+        <input type="text" name="title" style="width: 100%;" required /><br /><br />
+
+        <label>Protein Type (category)</label><br />
+        <input type="text" name="protein_type" style="width: 100%;" required /><br /><br />
+
+        <label>Instructions</label><br />
+        <textarea name="instructions" rows="6" style="width: 100%;" required></textarea><br /><br />
+
+        <label>Select Ingredients (at least 1)</label><br />
+        <% ingredients.forEach(ing => { %>
+          <div>
+            <input type="checkbox" name="ingredient_ids" value="<%= ing.id %>" />
+            <%= ing.name %>
+          </div>
+        <% }) %>
+
+        <hr />
+
+        <h2>Add a new ingredient (optional)</h2>
+
+        <label>New Ingredient Name</label><br />
+        <input type="text" name="new_ingredient_name" style="width: 100%;" /><br /><br />
+
+        <label>New Ingredient Info (shows on hover)</label><br />
+        <textarea name="new_ingredient_info" rows="3" style="width: 100%;"></textarea><br /><br />
+
+        <button type="submit">Add Recipe</button>
+      </form>
+    </main>
+  </body>
+</html>

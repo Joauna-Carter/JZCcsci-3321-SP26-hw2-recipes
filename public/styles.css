@@ -1,0 +1,113 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  background: #f7b6c8; /* pink background */
+}
+
+.nav {
+  background: #111;
+  padding: 12px 16px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin-right: 14px;
+  font-weight: bold;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}
+
+.container {
+  background: #f5f0e6; /* light beige */
+  max-width: 1000px;
+  margin: 24px auto;
+  padding: 24px;
+  border-radius: 14px;
+}
+
+/* Home image */
+.profile-pic {
+  width: 160px;
+  height: 160px;
+  border-radius: 999px;
+  object-fit: cover;
+  display: block;
+  margin: 12px 0 18px 0;
+  border: 3px solid #111;
+}
+
+/* Recipes grid: 3 category columns */
+.category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.category-card {
+  background: #fff8ef; /* slightly lighter beige */
+  border-radius: 12px;
+  padding: 14px;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.category-title {
+  margin: 0 0 10px 0;
+  font-size: 22px;
+}
+
+.recipe-list {
+  list-style: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.recipe-list li {
+  margin: 6px 0;
+}
+
+.recipe-list a {
+  color: #0b57d0;
+  text-decoration: none;
+}
+
+.recipe-list a:hover {
+  text-decoration: underline;
+}
+
+/* Ingredient hover */
+.ingredient {
+  cursor: help;
+  margin-bottom: 6px;
+}
+
+.tooltip {
+  position: absolute;
+  max-width: 280px;
+  background: #111;
+  color: white;
+  padding: 10px;
+  border-radius: 6px;
+  font-size: 14px;
+  line-height: 1.3;
+  z-index: 1000;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Responsive: 2 columns then 1 column */
+@media (max-width: 900px) {
+  .category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}
